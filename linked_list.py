@@ -11,11 +11,11 @@ class LinkedList(object):
         self.head = head
         self.length = 0
 
-    """
-    This method appends the element at the end of the linked list
-    Runtime of O(n) since entire list traversal is needed.
-    """
     def append(self, value):
+        """
+            This method appends the element at the end of the linked list
+            Runtime of O(n) since entire list traversal is needed.
+        """
         new_element = Element(value)
         if self.head:
             # Case when the linked list already has one or more elements
@@ -33,11 +33,11 @@ class LinkedList(object):
             self.head = new_element
         self.length += 1
 
-    """
-    This method returns the index of the element for which the value matches the argument
-    Runtime of O(n) as the worst case.
-    """
     def find(self, value):
+        """
+            This method returns the index of the element for which the value matches the argument
+            Runtime of O(n) as the worst case.
+        """
         if self.head:
             # Case when the linked list is having one or more elements
             current_element = self.head
@@ -55,11 +55,11 @@ class LinkedList(object):
             # Case when the linked list does not have any element
             return -999 # Return -999 if the linked list is empty
 
-    """
-    This method returns the element at a given index
-    Runtime O(n) as the worst case.
-    """
     def get(self, index):
+        """
+            This method returns the element at a given index
+            Runtime O(n) as the worst case.
+        """
         current_index = 0
         if self.head:
             current_element = self.head
@@ -74,11 +74,11 @@ class LinkedList(object):
         else:
             return -999 # Return -999 if the linked list is empty
 
-    """
-    This method inserts a new element at a given index. This method has runtime of O(N) as it would
-    require the list traversal by calling get() method.
-    """
     def insert_at(self, value, index):
+        """
+            This method inserts a new element at a given index. This method has runtime of O(N) as it would
+            require the list traversal by calling get() method.
+        """
         if index > self.length:
             raise IndexError("Index out of bound")
         elif index == self.length:
@@ -99,11 +99,11 @@ class LinkedList(object):
             self.append(value)
         self.length += 1
 
-    """
-    This method is used to push an element at the beginning of linked list.
-    Runtime O(1)
-    """
     def push(self, value):
+        """
+            This method is used to push an element at the beginning of linked list.
+            Runtime O(1)
+        """
         new_element = Element(value)
         if self.head:
             new_element.next = self.head
@@ -112,13 +112,13 @@ class LinkedList(object):
             self.head = new_element
         self.length += 1
 
-    """
-    This method deletes the first occurrence of the passed value.
-    :returns -999 if the linked list is empty
-    :returns None if the value could not be found
-    :returns 0 if the value is deleted successfully
-    """
     def delete(self, value):
+        """
+            This method deletes the first occurrence of the passed value.
+            :returns -999 if the linked list is empty
+            :returns None if the value could not be found
+            :returns 0 if the value is deleted successfully
+        """
         if self.head:
             current_element = self.head
             if current_element.value == value:
@@ -141,12 +141,12 @@ class LinkedList(object):
         else:
             return -999
 
-    """
-    This methods deletes the element at a given index.
-    Runtime is O(n) since it uses get method to reach the element at given index.
-    Raises exception for invalid index 
-    """
     def delete_at(self, index):
+        """
+            This methods deletes the element at a given index.
+            Runtime is O(n) since it uses get method to reach the element at given index.
+            Raises exception for invalid index
+        """
         if index >= self.length:
             raise IndexError("Index out of bound")
         elif index < 0:
@@ -162,11 +162,11 @@ class LinkedList(object):
             prev_element.next = element_at_index.next
         self.length -= 1
 
-    """
-    This method returns the length of the linked list.
-    Runtime is O(1) since this value is maintained in LinkedList class.
-    """
     def len(self):
+        """
+            This method returns the length of the linked list.
+            Runtime is O(1) since this value is maintained in LinkedList class.
+        """
         return self.length
 
     def __str__(self):
