@@ -28,5 +28,6 @@ def main():
     list2 = [11, -5, 0, 1, 7, 2, 6, 3, 8, 9]
     print(bubble_sort(list2))
 
+
 if __name__ == '__main__':
     main()
